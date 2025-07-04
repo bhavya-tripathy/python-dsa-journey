@@ -1,7 +1,7 @@
 
 name = "Bhavya"
 age = 17
-height = 5.9
+height = 5.2
 is_coder = True
 
 print("Name:", name)

@@ -41,17 +41,11 @@ python-dsa-journey/
 | 📙 DSA II       | Linked Lists, Stacks, Queues           | ⏳ Next |
 | 📕 Projects     | Mini tools + GUI (Tkinter/PyQt)        | ⏳ Coming |
 
----
-
-## 📈 DSA Tracker Preview
-
-Check `trackers/dsa-progress.md` for full table  
-Example:
-
-```text
-| # | Topic     | Problem         | Source   | Status | Date       |
-|---|-----------|------------------|----------|--------|------------|
-| 1 | Arrays    | Two Sum          | LeetCode | ✅      | 2025-07-03 |
-| 2 | Recursion | Print Subsets    | Self     | ✅      | 2025-07-04 |
-✏️ Daily Log Snapshot
 Track my grind in trackers/daily-log.md
+## 📚 My Study Notes (Markdown Files)
+
+[Quick Notes](01_basics/02_functions/03_dsa/notes/quicknotes.md)
+[Recursion Notes](notes/recursion.md)
+[Sorting Algorithms](notes/sorting_algorithms.md)
+[DSA Progress Tracker](03_dsa/notes/trackers/dsa-progress.md)
+[📝 Daily Log](01_basics/02_functions/03_dsa/notes/trackers/daily-log.md)
