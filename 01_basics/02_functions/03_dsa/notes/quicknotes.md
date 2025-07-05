@@ -12,18 +12,15 @@ Variables are how computers remember stuff.
 Forever hack:
 👉 A variable is just a labeled box that holds something until you change it.
 
-python
-Copy
-Edit
+code example:
 name = "Bhavya"
 age = 17
+
 🧩 2. IF-ELSE — Like Real Life Choices
 Metaphor:
 "If it rains, take an umbrella. Else, wear sunglasses."
 
-python
-Copy
-Edit
+
 if rain:
     take("umbrella")
 else:
@@ -31,9 +28,7 @@ else:
 Forever hack:
 👉 If-Else is just your brain making decisions based on truth.
 
-python
-Copy
-Edit
+code example:
 score = 88
 if score > 90:
     print("Topper")
@@ -51,9 +46,7 @@ For loop: "Play this song 5 times."
 
 While loop: "Keep playing until I say stop."
 
-python
-Copy
-Edit
+code example:
 for i in range(5):
     print("🌀 Doing it", i)
 
@@ -66,9 +59,7 @@ Forever hack:
 Metaphor:
 You press a button, and something happens. Like blending a smoothie.
 
-python
-Copy
-Edit
+code example:
 def blend(fruit):
     return fruit + " smoothie"
 
@@ -82,9 +73,7 @@ It saves you from repeating code — just like a real blender saves effort.
 Metaphor:
 A function that calls itself, like a mirror reflecting into a mirror.
 
-python
-Copy
-Edit
+code example:
 def countdown(n):
     if n == 0:
         return
@@ -99,9 +88,7 @@ Like peeling an onion — one layer at a time.
 Metaphor:
 An array is like a tray: fixed positions, ordered items.
 
-python
-Copy
-Edit
+code example:
 eggs = ["🥚", "🥚", "🥚"]
 print(eggs[1])  # middle egg
 Forever hack:
@@ -111,9 +98,7 @@ Forever hack:
 Metaphor:
 Each node points to the next location. Like a "next clue".
 
-python
-Copy
-Edit
+code example:
 class Node:
     def __init__(self, data):
         self.data = data
@@ -126,9 +111,7 @@ Stack = Plates in a pile (Last In First Out)
 
 Queue = Line at a counter (First In First Out)
 
-python
-Copy
-Edit
+code example:
 # Stack
 stack = []
 stack.append("🍕")
@@ -232,3 +215,17 @@ from collections import deque
 queue = deque()
 queue.append(1)
 queue.popleft()
+
+
+### 🔁 How to Push Changes to GitHub
+
+```bash
+git status           # Check what changed
+git add .            # Stage all changes
+git commit -m "..."  # Commit with a message
+git push origin main # Push to GitHub
+
+shortcut>>>>>
+git add .
+git commit -m 
+git push origin main
