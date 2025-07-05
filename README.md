@@ -49,7 +49,3 @@ Track my grind in trackers/daily-log.md
 [Sorting Algorithms](notes/sorting_algorithms.md)
 [DSA Progress Tracker](03_dsa/notes/trackers/dsa-progress.md)
 [📝 Daily Log](01_basics/02_functions/03_dsa/notes/trackers/daily-log.md)
-![GitHub last commit](https://img.shields.io/github/last-commit/bhavya-tripathy/python-dsa-journey)
-![GitHub repo size](https://img.shields.io/github/repo-size/bhavya-tripathy/python-dsa-journey)
-![GitHub stars](https://img.shields.io/github/stars/bhavya-tripathy/python-dsa-journey?style=social)
-
