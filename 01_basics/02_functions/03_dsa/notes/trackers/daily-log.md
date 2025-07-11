@@ -39,6 +39,43 @@ Tracking my daily learning, concepts covered, and reflections on progress.
 >  
 > This is the first day it all started to feel **real** — like I’m becoming a true developer.  
 >
+# 🧠 Daily Log – Python DSA Journey
+### 📅 Date: 11 July 2025 (Friday)
+
+---
+
+## ✅ Today’s Progress:
+- [x] Completed **Functions Module**
+  - Wrote and understood: `factorial`, `fibonacci`, `is_prime`, `is_palindrome`, lambda, and variable arguments
+  - Committed clean code to GitHub
+- [x] Set up **Recursion Module**
+  - Added notes on recursion theory and when to use it
+  - Implemented 7 classic recursive problems
+- [x] Fixed Git issues (merge conflicts, non-fast-forward errors)
+  - Learned to handle `git pull`, merge messages, and push cleanly
+
+---
+
+## 🧪 Concepts Learned:
+- Base case vs Recursive case
+- Recursive thinking vs Iterative loops
+- Stack behavior in recursion
+- Git workflows: pull → merge → push
+
+---
+
+## 💡 Reflections:
+> “Recursion felt scary at first, but breaking it into base and recursive steps made it click. I feel more confident now — this journey is actually working.”
+
+---
+
+## 📍 Next Up:
+- Solve 2–3 recursion problems from Leetcode
+- Write `recursion.md` notes on visual stack flow
+- Explore backtracking logic with recursion
+
+---
+
 
 ---
 
