@@ -1,0 +1,173 @@
+import tkinter as tk
+import random
+
+class SudokuGUI:
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title("🧩 Smooth Sudoku Visual Solver")
+
+        self.entries = [[None for _ in range(9)] for _ in range(9)]
+        self.board = [[0 for _ in range(9)] for _ in range(9)]
+        self.empty_cells = []
+        self.current = 0
+        self.steps = 0
+        self.backtracks = 0
+
+        self.create_widgets()
+
+        self.window.mainloop()
+
+    def create_widgets(self):
+        frame = tk.Frame(self.window)
+        frame.pack()
+
+        for i in range(9):
+            for j in range(9):
+                entry = tk.Entry(frame, width=2, font=("Helvetica", 20), justify="center")
+                entry.grid(row=i, column=j, padx=2, pady=2)
+                self.entries[i][j] = entry
+
+        button_frame = tk.Frame(self.window)
+        button_frame.pack(pady=10)
+
+        tk.Button(button_frame, text="Solve", command=self.prepare_to_solve).pack(side=tk.LEFT, padx=5)
+        tk.Button(button_frame, text="Generate Puzzle", command=self.generate_puzzle).pack(side=tk.LEFT, padx=5)
+        tk.Button(button_frame, text="Clear", command=self.clear).pack(side=tk.LEFT, padx=5)
+
+        self.status = tk.Label(self.window, text="Steps: 0 | Backtracks: 0")
+        self.status.pack(pady=5)
+
+    def read_board(self):
+        self.board = []
+        for i in range(9):
+            row = []
+            for j in range(9):
+                val = self.entries[i][j].get()
+                row.append(int(val) if val.isdigit() else 0)
+            self.board.append(row)
+
+    def update_cell(self, row, col, val, color="white"):
+        entry = self.entries[row][col]
+        entry.delete(0, tk.END)
+        if val != 0:
+            entry.insert(0, str(val))
+        entry.config(bg=color)
+
+    def update_status(self):
+        self.status.config(text=f"Steps: {self.steps} | Backtracks: {self.backtracks}")
+
+    def prepare_to_solve(self):
+        self.read_board()
+        self.empty_cells = [(r, c) for r in range(9) for c in range(9) if self.board[r][c] == 0]
+        self.current = 0
+        self.steps = 0
+        self.backtracks = 0
+        self.solve_step_by_step()
+
+    def solve_step_by_step(self):
+        if self.current == len(self.empty_cells):
+            self.update_status()
+            return  # Solved
+
+        row, col = self.empty_cells[self.current]
+        for num in range(self.board[row][col] + 1, 10):
+            if self.is_valid(row, col, num):
+                self.board[row][col] = num
+                self.update_cell(row, col, num, "lightgreen")
+                self.steps += 1
+                self.current += 1
+                self.update_status()
+                self.window.after(20, self.solve_step_by_step)
+                return
+
+        # No valid number, backtrack
+        self.board[row][col] = 0
+        self.update_cell(row, col, 0, "lightcoral")
+        self.current -= 1
+        self.backtracks += 1
+        self.update_status()
+        self.window.after(20, self.solve_step_by_step)
+
+    def is_valid(self, row, col, num):
+        for i in range(9):
+            if self.board[row][i] == num or self.board[i][col] == num:
+                return False
+        box_row, box_col = row // 3 * 3, col // 3 * 3
+        for i in range(box_row, box_row + 3):
+            for j in range(box_col, box_col + 3):
+                if self.board[i][j] == num:
+                    return False
+        return True
+
+    def clear(self):
+        for i in range(9):
+            for j in range(9):
+                self.entries[i][j].delete(0, tk.END)
+                self.entries[i][j].config(bg="white")
+        self.status.config(text="Steps: 0 | Backtracks: 0")
+
+    def generate_puzzle(self):
+        self.clear()
+        puzzle = generate_sudoku()
+        for i in range(9):
+            for j in range(9):
+                if puzzle[i][j] != 0:
+                    self.entries[i][j].insert(0, str(puzzle[i][j]))
+        self.status.config(text="Puzzle generated.")
+
+# === Generator (same as before) ===
+def generate_sudoku():
+    board = [[0]*9 for _ in range(9)]
+    fill_board_randomly(board)
+    solver = BacktrackSolver(board)
+    solver.solve()
+    remove_cells(board, 40)
+    return board
+
+def fill_board_randomly(board):
+    nums = list(range(1, 10))
+    for i in range(0, 9, 3):
+        for j in range(0, 9, 3):
+            random.shuffle(nums)
+            for r in range(3):
+                for c in range(3):
+                    board[i+r][j+c] = nums[r*3+c]
+
+def remove_cells(board, count):
+    removed = 0
+    while removed < count:
+        i, j = random.randint(0, 8), random.randint(0, 8)
+        if board[i][j] != 0:
+            board[i][j] = 0
+            removed += 1
+
+class BacktrackSolver:
+    def __init__(self, board):
+        self.board = board
+
+    def is_valid(self, row, col, num):
+        for i in range(9):
+            if self.board[row][i] == num or self.board[i][col] == num:
+                return False
+        box_row, box_col = row // 3 * 3, col // 3 * 3
+        for i in range(box_row, box_row + 3):
+            for j in range(box_col, box_col + 3):
+                if self.board[i][j] == num:
+                    return False
+        return True
+
+    def solve(self):
+        for row in range(9):
+            for col in range(9):
+                if self.board[row][col] == 0:
+                    for num in range(1, 10):
+                        if self.is_valid(row, col, num):
+                            self.board[row][col] = num
+                            if self.solve():
+                                return True
+                            self.board[row][col] = 0
+                    return False
+        return True
+
+if __name__ == "__main__":
+    SudokuGUI()
