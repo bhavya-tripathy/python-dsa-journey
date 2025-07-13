@@ -75,6 +75,54 @@ Tracking my daily learning, concepts covered, and reflections on progress.
 - Explore backtracking logic with recursion
 
 ---
+## 📅 Daily Log – 13th July 2025
+
+### 🧵 Core Python Concepts Learned:
+- ✅ Completed full theory + code for **Strings in Python**
+  - String creation, indexing, slicing
+  - Important string methods (`upper()`, `find()`, `replace()`, etc.)
+  - Immutability, formatting with f-strings
+  - Palindrome checker and vowel counter functions
+  - Looping through strings
+- 📝 Added:
+  - `notes/strings.md` – clean markdown notes
+  - `strings.py` – code examples with commentary
+
+---
+
+### 🔢 Major Project Milestone:
+- ✅ Added a fully working **Sudoku Solver** using **recursion and backtracking**
+  - Learnt and implemented algorithm from scratch
+  - Applied problem-solving logic beyond basic DSA
+  - Currently stored in `project.py` (to be modularized into `projects/sudoku_solver.py`)
+  
+---
+
+### 🧠 Concepts Practiced:
+- Recursion (again, via Sudoku)
+- Backtracking technique
+- Clean code structuring for clarity and reusability
+- Git workflow (committing notes + projects properly)
+
+---
+
+### 🧭 Reflections:
+- Learned not just how strings *work*, but how to apply them meaningfully (e.g., palindrome checks).
+- Practicing string manipulation improved confidence in using Python for real problem solving.
+- Sudoku project was a strong confidence boost: applying recursion to a large problem felt powerful.
+- Seeing things click today. Momentum is real — and so is growth.
+
+---
+
+### 🔜 Next Steps:
+- ✅ Organize `project.py` → `projects/sudoku_solver.py`
+- ⏭️ Move on to **Lists, Tuples, Sets, and Dictionaries**
+- ⏭️ Start markdown + code for **File Handling** and **Exception Handling**
+- ⏭️ Visualize solving steps for Sudoku using GUI (Tkinter?)
+
+---
+
+✨ _"The climb is slow, but every step is the summit."_  
 
 
 ---
