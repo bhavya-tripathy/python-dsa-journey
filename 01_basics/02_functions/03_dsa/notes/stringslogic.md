@@ -1,8 +1,4 @@
-Here's your full lesson on **Strings in Python**, converted into a clean, elegant `strings.md` markdown file for your repo:
 
----
-
-````markdown
 # 🧵 Python Strings – Masterclass
 
 ---
