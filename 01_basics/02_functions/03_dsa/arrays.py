@@ -1,4 +1,5 @@
 # arrays.py - Basic array operations
+#By a liner array we mean a list of finite number N of similar dat elements refenced respectively by a set of n consecutive numbers.
 
 arr = [10, 20, 30, 40, 50]
 
